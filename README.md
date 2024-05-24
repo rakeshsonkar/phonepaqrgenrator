@@ -16,9 +16,9 @@ This project is a Spring Boot application that generates QR codes for UPI paymen
    git clone https://github.com/your-username/qr-code-payment-generator.git
    cd qr-code-payment-generator
 2.  **Build the project**:
-  ```sh
+     ```sh
 mvn clean install
-3.  **Run the application** :
+3.  **Run the application** : 
 ```sh
 mvn spring-boot:run
 
