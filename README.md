@@ -1,5 +1,31 @@
-QR Code Generation API Documentation
-Overview
+# QR Code Payment Generator
+
+This project is a Spring Boot application that generates QR codes for UPI payments. The QR code can be scanned by any UPI-compatible payment application to initiate a payment with the provided details.
+
+## Getting Started
+
+### Prerequisites
+
+- Java 11 or higher
+- Maven
+
+### Installing
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/your-username/qr-code-payment-generator.git
+   cd qr-code-payment-generator
+2.  **Build the project**:
+
+mvn clean install
+3.**Run the application**:
+
+
+mvn spring-boot:run
+The application will start on http://localhost:8080.
+
+###API Documentation
+**Overview**
 This API allows you to generate a QR code for payment using UPI (Unified Payments Interface) details. The QR code can be scanned by any UPI-compatible payment application to initiate a payment with the provided details.
 
 Base URL
@@ -14,26 +40,12 @@ URL: /generateQRCode
 Method: GET
 Headers: None
 Response Format: PNG image
-Query Parameters
-Parameter	Type	Required	Description
-pa	String	Yes	Payee address (UPI ID)
-pn	String	Yes	Payee name
-am	String	Yes	Amount to be paid
-cu	String	Yes	Currency code (e.g., INR)
-tn	String	Yes	Transaction note or description
-Example Request
-sql
-Copy code
+**Query Parameters**
+![image](https://github.com/rakeshsonkar/phonepaqrgenrator/assets/92536736/9c940179-a616-4d4d-a34c-0e6d27491a4f)
+![image](https://github.com/rakeshsonkar/phonepaqrgenrator/assets/92536736/9c940179-a616-4d4d-a34c-0e6d27491a4f)
+
 GET /generateQRCode?pa=someone@bank&pn=Someone&am=100&cu=INR&tn=Payment+for+services
-Sample CURL Request
-sh
-Copy code
-curl -G 'http://localhost:8080/generateQRCode' \
-    --data-urlencode 'pa=someone@bank' \
-    --data-urlencode 'pn=Someone' \
-    --data-urlencode 'am=100' \
-    --data-urlencode 'cu=INR' \
-    --data-urlencode 'tn=Payment for services'
+
 Success Response
 Code: 200 OK
 Content: PNG image of the QR code
