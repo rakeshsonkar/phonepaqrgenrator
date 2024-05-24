@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h1>Generate QR Code for Payment</h1>
+    <form id="qrForm">
+        <input type="text" id="pa" placeholder="Payee Address (pa)" required value="someone@bank"><br>
+        <input type="text" id="pn" placeholder="Payee Name (pn)" required value="Someone"><br>
+        <input type="text" id="am" placeholder="Amount (am)" required value="100"><br>
+        <input type="text" id="cu" placeholder="Currency (cu)" required value="INR"><br>
+        <input type="text" id="tn" placeholder="Transaction Note (tn)" required value="Payment for services"><br>
+        <button type="button" onclick="generateQRCode()">Generate QR Code</button>
+    </form>
+    <br>
+    <img id="qrCode" alt="QR Code will be displayed here">
+    <script>
+        function generateQRCode() {
+            var pa = document.getElementById('pa').value;
+            var pn = document.getElementById('pn').value;
+            var am = document.getElementById('am').value;
+            var cu = document.getElementById('cu').value;
+            var tn = document.getElementById('tn').value;
+            fetch(`"http://localhost:8080/"generateQRCode?pa=${pa}&pn=${pn}&am=${am}&cu=${cu}&tn=${tn}`)
+                .then(response => response.blob())
+                .then(blob => {
+                    var url = URL.createObjectURL(blob);
+                    document.getElementById('qrCode').src = url;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
