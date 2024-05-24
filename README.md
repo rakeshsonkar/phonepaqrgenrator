@@ -16,11 +16,10 @@ This project is a Spring Boot application that generates QR codes for UPI paymen
    git clone https://github.com/your-username/qr-code-payment-generator.git
    cd qr-code-payment-generator
 2.  **Build the project**:
-
-mvn clean install
+3.  ```sh
+   mvn clean install
 3.**Run the application**:
-
-
+```sh
 mvn spring-boot:run
 The application will start on http://localhost:8080.
 
@@ -41,7 +40,6 @@ Method: GET
 Headers: None
 Response Format: PNG image
 **Query Parameters**
-![image](https://github.com/rakeshsonkar/phonepaqrgenrator/assets/92536736/9c940179-a616-4d4d-a34c-0e6d27491a4f)
 ![image](https://github.com/rakeshsonkar/phonepaqrgenrator/assets/92536736/9c940179-a616-4d4d-a34c-0e6d27491a4f)
 
 GET /generateQRCode?pa=someone@bank&pn=Someone&am=100&cu=INR&tn=Payment+for+services
