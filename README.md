@@ -16,14 +16,15 @@ This project is a Spring Boot application that generates QR codes for UPI paymen
    git clone https://github.com/your-username/qr-code-payment-generator.git
    cd qr-code-payment-generator
 2.  **Build the project**:
-3.  ```sh
-   mvn clean install
-3.**Run the application**:
+  ```sh
+mvn clean install
+3.  **Run the application** :
 ```sh
 mvn spring-boot:run
+
 The application will start on http://localhost:8080.
 
-###API Documentation
+### API Documentation
 **Overview**
 This API allows you to generate a QR code for payment using UPI (Unified Payments Interface) details. The QR code can be scanned by any UPI-compatible payment application to initiate a payment with the provided details.
 
